@@ -1,0 +1,65 @@
+/* reactflow-overrides.css
+   Import this in index.js AFTER reactflow/dist/style.css
+   to force dark theme on all ReactFlow chrome elements
+*/
+
+/* Canvas background */
+.react-flow__renderer {
+  background: var(--bg-base);
+}
+
+/* Edges */
+.react-flow__edge-path {
+  stroke: #555566;
+  stroke-width: 2;
+}
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: #007acc;
+}
+.react-flow__edge-path.animated {
+  stroke-dasharray: 6;
+}
+
+/* Arrow markers */
+.react-flow__arrowhead polyline {
+  stroke: #555566;
+  fill: #555566;
+}
+
+/* Connection line while dragging */
+.react-flow__connection-path {
+  stroke: #007acc;
+  stroke-width: 2;
+}
+
+/* Selection box */
+.react-flow__selection {
+  background: rgba(0, 122, 204, 0.08);
+  border: 1px solid #007acc;
+}
+
+/* Node selected ring */
+.react-flow__node.selected > div {
+  outline: 1.5px solid #007acc;
+  outline-offset: 2px;
+}
+
+/* Controls buttons */
+.react-flow__controls-button {
+  background: var(--bg-elevated) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+  fill: var(--text-primary) !important;
+}
+.react-flow__controls-button:hover {
+  background: var(--bg-hover) !important;
+}
+.react-flow__controls-button svg {
+  fill: var(--text-secondary);
+}
+
+/* Minimap */
+.react-flow__minimap {
+  background: var(--bg-surface) !important;
+}

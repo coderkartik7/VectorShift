@@ -1,13 +1,92 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --bg-base: #1e1e1e; /* editor background */
+  --bg-surface: #252526; /* sidebar / toolbar */
+  --bg-elevated: #2d2d30; /* node cards */
+  --bg-input: #3c3c3c; /* input fields */
+  --bg-hover: #37373d;
+
+  --border-subtle: #3e3e42;
+  --border-focus: #007acc;
+
+  --accent-blue: #007acc; /* VS Code blue */
+  --accent-cyan: #4ec9b0; /* teal — types/interfaces */
+  --accent-yellow: #dcdcaa; /* functions */
+  --accent-orange: #ce9178; /* strings */
+  --accent-purple: #c586c0; /* keywords */
+  --accent-green: #6a9955; /* comments / success */
+  --accent-red: #f44747; /* errors */
+
+  --text-primary: #d4d4d4;
+  --text-secondary: #858585;
+  --text-muted: #555555;
+
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  --font-ui: "Inter", system-ui, sans-serif;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  --transition: 150ms ease;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-input);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-focus);
+}
+
+input,
+select,
+textarea {
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 3px 6px;
+  outline: none;
+  transition: border-color var(--transition);
+  width: 100%;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--border-focus);
+}
+select option {
+  background: var(--bg-elevated);
+}
+.react-flow__node label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
